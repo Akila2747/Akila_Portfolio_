@@ -159,6 +159,12 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  section[id], header[id] {
+    scroll-margin-top: 5rem;
+  }
   body {
     font-family: var(--font-body);
     background-image: var(--surface-glow);
