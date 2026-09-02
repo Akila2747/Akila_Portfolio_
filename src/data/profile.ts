@@ -1,73 +1,123 @@
 /* =========================================================================
- * PROFILE, SKILLS, EXPERIENCE & PROJECTS
- * Edit this file to update the portfolio content. Nothing is hard-coded in
- * the page components.
+ * PROFILE · SKILLS · EDUCATION · EXPERIENCE · PROJECTS
+ * Everything on the site is rendered from this file. Edit here only.
  * ========================================================================= */
 
-import resumeAsset from "@/assets/Akila_T_Resume.docx.asset.json";
-
 /* ---- RESUME -------------------------------------------------------------
- * Replace `resumeUrl` whenever you update your CV:
- *   - ask Lovable to upload your new PDF, or
- *   - put it in `public/` and use "/Akila_T_Resume.pdf"
+ * Replace `public/Akila_T_Resume.pdf` with your updated PDF whenever your
+ * resume changes — no code edit needed.
  * ------------------------------------------------------------------------ */
-export const resumeUrl = resumeAsset.url;
-export const resumeFileName = "Akila_T_Resume.docx";
+export const resumeUrl = "/Akila_T_Resume.pdf";
+export const resumeFileName = "Akila_T_Resume.pdf";
 
 export const profile = {
   name: "Akila T",
-  role: "Computer Science Engineering Student",
-  tagline: "Aspiring Data Analyst & Software Developer",
+  label: "Computer Science Engineering Student",
+  headline: "Java Developer • Software Developer • Web & Data Analytics",
   location: "Chennai, India",
   email: "akilat769@gmail.com",
   linkedin: "https://www.linkedin.com/in/akila-t-57942b355",
   github: "https://github.com/Akila2747",
-  summary:
-    "Motivated Computer Science Engineering student with a strong foundation in programming, web development and data analytics. Passionate about software development, data analytics and AI/ML, with hands-on experience through internships, NPTEL courses and workshops.",
+  intro:
+    "I build practical technology solutions while developing my skills in Java, web development and data analytics.",
 };
 
-export const skillGroups = [
-  { label: "Programming", items: ["Java", "Python", "C", "JavaScript"] },
-  { label: "Core CS", items: ["OOP", "Data Structures & Algorithms", "DBMS"] },
-  { label: "Web Development", items: ["HTML", "CSS", "JavaScript"] },
-  { label: "Databases", items: ["SQL", "MySQL"] },
-  { label: "Data & Analytics", items: ["Power BI", "Excel"] },
-  { label: "Tools & Platforms", items: ["Git", "GitHub", "VS Code"] },
+/* ---- ABOUT --------------------------------------------------------------- */
+export const aboutParagraphs = [
+  "I'm a B.E. Computer Science and Engineering student focused on Java and software development, with working experience in web development and a growing interest in data analytics.",
+  "I learn by building — a web development internship, coursework projects and self-driven work are how I turn concepts into something that actually runs.",
+  "Long term, I want to build technology products of my own and eventually run my own business.",
 ];
 
+export const aboutCards = [
+  { label: "Focus", value: "Java & Software Development" },
+  { label: "Also building with", value: "Web Development" },
+  { label: "Exploring", value: "Data Analytics" },
+  { label: "Long-term goal", value: "Technology entrepreneurship" },
+];
+
+/* ---- SKILLS -------------------------------------------------------------- */
+export type SkillGroup = { label: string; icon: string; items: string[]; note?: string };
+
+export const skillGroups: SkillGroup[] = [
+  { label: "Programming", icon: "code", items: ["Java", "Python", "C", "JavaScript"] },
+  { label: "Core Computer Science", icon: "cpu", items: ["OOP", "DSA", "DBMS"] },
+  {
+    label: "Web Development",
+    icon: "layout",
+    items: ["HTML", "CSS", "JavaScript", "React", "TypeScript", "Tailwind CSS"],
+  },
+  { label: "Databases", icon: "database", items: ["SQL", "MySQL", "JDBC"] },
+  { label: "Data & Analytics", icon: "chart", items: ["Excel", "Power BI"] },
+  { label: "Tools", icon: "tool", items: ["Git", "GitHub", "VS Code"] },
+  {
+    label: "AI & Productivity",
+    icon: "sparkles",
+    items: ["ChatGPT", "Claude", "Lovable", "AI-assisted development"],
+    note: "Used as development tools, not as AI/ML expertise.",
+  },
+  {
+    label: "Additional Knowledge",
+    icon: "book",
+    items: ["AI/ML Fundamentals", "IoT", "Cybersecurity Basics"],
+  },
+];
+
+/* ---- EDUCATION ----------------------------------------------------------- */
 export const education = [
   {
     degree: "B.E. Computer Science and Engineering",
-    school: "New Prince Shri Bhavani College of Engineering and Technology, Anna University",
+    school: "New Prince Shri Bhavani College of Engineering and Technology",
     period: "2024 – 2028",
+    detail: "Current CGPA: 8.1 / 10",
+    primary: true,
   },
-  { degree: "HSC (12th) – Biology Stream", school: "Higher Secondary Certificate", period: "2023 – 2024" },
-  { degree: "SSLC (10th)", school: "", period: "2021 – 2022" },
+  {
+    degree: "12th Standard",
+    school: "Chennai Higher Secondary School, Thiruvanmiyur",
+    period: "",
+    detail: "74.5%",
+    primary: false,
+  },
+  {
+    degree: "10th Standard",
+    school: "Chandra Higher Secondary School, Sethiyathope",
+    period: "",
+    detail: "70%",
+    primary: false,
+  },
 ];
 
+/* ---- EXPERIENCE ---------------------------------------------------------- */
 export const experience = [
   {
     role: "Web Developer Intern",
-    company: "Ocean Walk IT Private Limited",
-    period: "June – July 2025",
+    company: "Ocean Walk IT Solutions",
+    period: "2025",
     points: [
       "Built responsive web pages using HTML, CSS and JavaScript.",
       "Collaborated with the development team to deliver client-facing features on schedule.",
-      "Applied version control with Git/GitHub and wrote clean, maintainable code.",
+      "Applied version control using Git/GitHub.",
+      "Wrote clean and maintainable code.",
     ],
   },
 ];
 
 /* ---- PROJECTS -----------------------------------------------------------
- * Add a new project by copying one entry. `category` powers grouping,
- * `github` and `demo` are optional links, `image` is an optional screenshot.
+ * Add a project by copying one entry below. Leave `github`/`demo` out when
+ * you don't have a link yet — the buttons hide themselves.
  * ------------------------------------------------------------------------ */
 export type Project = {
   id: string;
   title: string;
+  status: "Ongoing" | "Completed" | "Planned";
   category: string;
-  description: string;
-  tech: string[];
+  summary: string;
+  problem?: string;
+  solution?: string;
+  features?: string[];
+  tech?: string[];
+  techNote?: string;
   github?: string;
   demo?: string;
   image?: string;
@@ -75,20 +125,32 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    id: "portfolio",
-    title: "Personal Portfolio Website",
-    category: "Web Development",
-    description:
-      "Modern responsive portfolio with a filterable certifications gallery, animated skills and contact section.",
-    tech: ["React", "TypeScript", "Tailwind CSS"],
-    github: "https://github.com/Akila2747",
+    id: "crowd-guardian",
+    title: "Crowd Guardian",
+    status: "Ongoing",
+    category: "AI / Software",
+    summary:
+      "Crowd Guardian is an AI-based crowd monitoring and risk detection concept designed to help identify potentially dangerous crowd conditions in real time. The system aims to analyze live visual and sensor-based information, estimate crowd density and movement patterns, identify increasing crowd risk, and provide targeted safety alerts.",
+    features: [
+      "Real-time crowd monitoring",
+      "People detection",
+      "Crowd density estimation",
+      "Movement tracking",
+      "Crowd movement analysis",
+      "Crowd risk classification",
+      "Safe / Moderate / High / Critical risk levels",
+      "Targeted safety alerts",
+      "Control-room monitoring",
+      "Visual crowd maps",
+      "Early identification of increasing crowd risk",
+    ],
+    techNote: "Technology stack — Currently under development",
   },
-  {
-    id: "powerbi-dashboard",
-    title: "Power BI Sales Dashboard",
-    category: "Data Analytics",
-    description:
-      "Interactive dashboards with CRUD operations visualising KPIs and trends, built on cleaned and transformed datasets.",
-    tech: ["Power BI", "Excel", "SQL"],
-  },
+];
+
+/* Space reserved for upcoming work — no placeholder project cards. */
+export const upcomingProjects = [
+  "Java + SQL application",
+  "Data Analytics project with Power BI",
+  "Additional software development project",
 ];

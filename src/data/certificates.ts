@@ -40,6 +40,8 @@ export type Certificate = {
   image: string;
   certificateLink: string;
   credentialId?: string;
+  /** Set true to keep a certificate in the file but hide it from the site. */
+  hidden?: boolean;
 };
 
 export const certificates: Certificate[] = [
@@ -86,6 +88,7 @@ export const certificates: Certificate[] = [
       "Workshop conducted in association with New Prince Shri Bhavani College of Engineering & Technology.",
     image: crudPowerBi.url,
     certificateLink: crudPowerBi.url,
+    hidden: true, // workshop attendance — kept on file, not shown on the site
   },
   {
     id: "tata-data-visualisation",
@@ -109,6 +112,7 @@ export const certificates: Certificate[] = [
     image: pantechAi.url,
     certificateLink: pantechAi.url,
     credentialId: "PEL-VAC-02087",
+    hidden: true, // short value-added course — kept on file, not shown on the site
   },
   {
     id: "oceanwalk-internship-completion",
@@ -131,3 +135,6 @@ export const certificates: Certificate[] = [
     certificateLink: oceanAcceptance.url,
   },
 ];
+
+/** Only these are rendered on the site (workshop/participation entries hidden). */
+export const visibleCertificates = certificates.filter((c) => !c.hidden);
