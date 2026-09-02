@@ -4,7 +4,9 @@ import { SectionHeading } from "./SectionHeading";
 import { Reveal } from "./Reveal";
 
 export function Education() {
-  const [college, ...schools] = education;
+  const college = education[0];
+  const schools = education.slice(1);
+  if (!college) return null;
 
   return (
     <section id="education" className="section-shell">
