@@ -47,7 +47,7 @@ export const skillGroups: SkillGroup[] = [
     icon: "layout",
     items: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
   },
-  { label: "Databases", icon: "database", items: ["SQL", "MySQL", "JDBC"] },
+  { label: "Databases", icon: "database", items: ["SQL", "MySQL"] },
   { label: "Data & Analytics", icon: "chart", items: ["Excel", "Power BI"] },
   { label: "Tools", icon: "tool", items: ["Git", "GitHub", "VS Code"] },
   {
@@ -145,6 +145,30 @@ export const projects: Project[] = [
       "Early identification of increasing crowd risk",
     ],
     techNote: "Technology stack — Currently under development",
+  },
+  {
+    id: "portfolio",
+    title: "Personal Portfolio Website",
+    status: "Completed",
+    category: "Web Development",
+    summary:
+      "A professional portfolio website built to present my skills, projects, education, experience, certifications and achievements in one clean, recruiter-friendly place.",
+    problem:
+      "I needed a single, credible online presence where recruiters and collaborators could quickly understand my background, work and contact details.",
+    solution:
+      "Designed and built a responsive, dark-themed developer portfolio with clear section navigation, project cards, a certification gallery and easy-to-update data files.",
+    features: [
+      "Clean, recruiter-focused layout",
+      "Sticky navigation with active section highlighting",
+      "Project showcase with status, tech tags and links",
+      "Certification gallery with category filters and lightbox view",
+      "Achievements section ready for future entries",
+      "Contact section with direct email and social links",
+      "Fully responsive across mobile, tablet and desktop",
+      "Easy to update from centralized data files",
+    ],
+    tech: ["React", "TypeScript", "Tailwind CSS", "Vite", "TanStack Start"],
+    demo: "https://id-preview--d776567e-f9af-40e6-a93d-e3cf59c70c81.lovable.app",
   },
 ];
 
