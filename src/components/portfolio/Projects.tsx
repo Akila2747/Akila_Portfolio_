@@ -111,7 +111,8 @@ export function Projects() {
                 ) : project.features?.length ? (
                   <div className="rounded-xl border border-border bg-secondary/40 p-5">
                     <p className="flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-accent">
-                      <Rocket className="size-3.5" aria-hidden="true" /> Planned features
+                      <Rocket className="size-3.5" aria-hidden="true" />{" "}
+                      {project.status === "Completed" ? "Key features" : "Planned features"}
                     </p>
                     <ul className="mt-4 grid gap-2">
                       {project.features.map((f) => (
@@ -122,7 +123,9 @@ export function Projects() {
                       ))}
                     </ul>
                     <p className="mt-4 text-xs text-muted-foreground/80">
-                      Planned scope — not yet implemented.
+                      {project.status === "Completed"
+                        ? "Implemented and live."
+                        : "Planned scope — not yet implemented."}
                     </p>
                   </div>
                 ) : null}
