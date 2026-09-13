@@ -28,7 +28,7 @@ import crudPowerBi from "@/assets/cert-crud-powerbi.jpg.asset.json";
 import tataForage from "@/assets/cert-tata-forage.jpg.asset.json";
 import pantechAi from "@/assets/cert-pantech-ai.jpg.asset.json";
 import oceanCompletion from "@/assets/cert-oceanwalk-completion.jpg.asset.json";
-import oceanAcceptance from "@/assets/cert-oceanwalk-acceptance.jpg.asset.json";
+
 
 export type Certificate = {
   id: string;
@@ -123,16 +123,6 @@ export const certificates: Certificate[] = [
     description: "30 day web development internship programme completed successfully.",
     image: oceanCompletion.url,
     certificateLink: oceanCompletion.url,
-  },
-  {
-    id: "oceanwalk-internship-acceptance",
-    title: "Internship Acceptance Letter – Web Development",
-    issuer: "Ocean Walk IT Private Limited",
-    date: "June 10 – July 9, 2025",
-    category: "Internship",
-    description: "Official acceptance letter for the web development internship programme.",
-    image: oceanAcceptance.url,
-    certificateLink: oceanAcceptance.url,
   },
 ];
 
