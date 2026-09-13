@@ -47,7 +47,7 @@ export const skillGroups: SkillGroup[] = [
     icon: "layout",
     items: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
   },
-  { label: "Databases", icon: "database", items: ["SQL", "MySQL"] },
+  { label: "Databases", icon: "database", items: ["SQL", "MySQL", "JDBC"] },
   { label: "Data & Analytics", icon: "chart", items: ["Excel", "Power BI"] },
   { label: "Tools", icon: "tool", items: ["Git", "GitHub", "VS Code"] },
   {
