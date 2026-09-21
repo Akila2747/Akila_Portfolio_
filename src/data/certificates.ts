@@ -24,7 +24,7 @@
 import novitech from "@/assets/cert-novitech-fullstack.jpg.asset.json";
 import nptelPython from "@/assets/cert-nptel-python.jpg.asset.json";
 import nptelC from "@/assets/cert-nptel-c.jpg.asset.json";
-import crudPowerBi from "@/assets/cert-crud-powerbi.jpg.asset.json";
+import crudPowerBi from "@/assets/cert-crud-powerbi-workshop.jpg.asset.json";
 import tataForage from "@/assets/cert-tata-forage.jpg.asset.json";
 import pantechAi from "@/assets/cert-pantech-ai.jpg.asset.json";
 import oceanCompletion from "@/assets/cert-oceanwalk-completion.jpg.asset.json";
@@ -88,7 +88,6 @@ export const certificates: Certificate[] = [
       "Workshop conducted in association with New Prince Shri Bhavani College of Engineering & Technology.",
     image: crudPowerBi.url,
     certificateLink: crudPowerBi.url,
-    hidden: true, // workshop attendance — kept on file, not shown on the site
   },
   {
     id: "tata-data-visualisation",
