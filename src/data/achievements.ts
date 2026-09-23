@@ -33,5 +33,13 @@ export type Achievement = {
 };
 
 export const achievements: Achievement[] = [
-  // Add your achievements here.
+  {
+    id: "nptel-elite-python",
+    title: "NPTEL Elite — Python for Data Science",
+    organization: "IIT Madras (NPTEL)",
+    date: "Jul–Aug 2025",
+    category: "Academic",
+    result: "Elite",
+    description: "Top performer recognition by IIT Madras (Jul–Aug 2025).",
+  },
 ];
